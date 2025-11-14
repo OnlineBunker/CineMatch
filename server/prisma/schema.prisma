@@ -8,11 +8,33 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
-  lastLogin DateTime?
-  updatedAt DateTime updatedAt()
+  id           Int         @id @default(autoincrement())
+  name         String
+  email        String      @unique
+  password     String
+  createdAt    DateTime    @default(now())
+  lastLogin    DateTime?
+
+  reviews      Review[]
+  watchlist    Watchlist[]
+}
+
+model Review {
+  id           Int         @id @default(autoincrement())
+  tmdbId       Int
+  rating       Int
+  comment      Int
+  createdAt    DateTime    @default(now())
+
+  userId       Int
+  user         User        @relation(fields: [userId], references: [id])
+}
+
+model Watchlist {
+  id           Int         @id @default(autoincrement())
+  tmdbId       Int 
+  createdAt    DateTime    @default(now())
+
+  userId       Int
+  user         User        @relation(fields: [userId], references: [id])
 }

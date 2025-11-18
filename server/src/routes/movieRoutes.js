@@ -1,9 +1,12 @@
-const express = require("express");
-const router = express.Router();
+import express from "express";
+import {
+  searchMovies,
+  getMovieDetails,
+} from "../controllers/movieController.js";
 
-const { searchMovies, getMovieDetails } = require("../controllers/movieController");
+const router = express.Router();
 
 router.get("/search", searchMovies);
 router.get("/:tmdbId", getMovieDetails);
 
-module.exports = router;
+export default router;

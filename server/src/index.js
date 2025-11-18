@@ -1,15 +1,16 @@
-const express = require("express");
+import express from "express";
+import dotenv from "dotenv";
+
+import authRoutes from "./routes/authRoutes.js";
+import reviewRoutes from "./routes/reviewRoutes.js";
+import watchlistRoutes from "./routes/watchlistRoutes.js";
+import movieRoutes from "./routes/movieRoutes.js";
+
 const app = express();
-const dotenv = require("dotenv");
 dotenv.config();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-const authRoutes = require("./routes/authRoutes");
-const reviewRoutes = require("./routes/reviewRoutes");
-const watchlistRoutes = require("./routes/watchlistRoutes");
-const movieRoutes = require("./routes/movieRoutes");
 
 app.use("/api/auth", authRoutes);
 app.use("/api/reviews", reviewRoutes);

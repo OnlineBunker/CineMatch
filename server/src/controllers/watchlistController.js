@@ -22,7 +22,7 @@ const addToWatchlist = async (req, res) => {
       },
     });
     res.status(201).json({ message: "Added to watchlist", item });
-    
+
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
   }
@@ -65,4 +65,4 @@ const removeFromWatchlist = async (req, res) => {
   }
 };
 
-module.exports = { addToWatchlist, getMyWatchlist, removeFromWatchlist };
+export { addToWatchlist, getMyWatchlist, removeFromWatchlist };

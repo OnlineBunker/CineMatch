@@ -1,15 +1,15 @@
-const express = require("express");
-const router = express.Router();
+import express from "express";
+import authMiddleware from "../middleware/authMiddleware.js";
+import {
+  addToWatchlist,
+  getMyWatchlist,
+  removeFromWatchlist,
+} from "../controllers/watchlistController.js";
 
-const authMiddleware = require("../middleware/authMiddleware");
-const {
-    addToWatchlist,
-    getMyWatchlist,
-    removeFromWatchlist
-} = require("../controllers/watchlistController");
+const router = express.Router();
 
 router.post("/:tmdbId", authMiddleware, addToWatchlist);
 router.get("/", authMiddleware, getMyWatchlist);
 router.delete("/:tmdbId", authMiddleware, removeFromWatchlist);
 
-module.exports = router;
+export default router;

@@ -84,4 +84,4 @@ const updateReview = async ( req, res ) => {
     }
 }
 
-module.exports = { createReview, getMyReviews, deleteReview, updateReview };
+export { createReview, getMyReviews, deleteReview, updateReview };

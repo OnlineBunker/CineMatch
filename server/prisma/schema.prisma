@@ -23,7 +23,7 @@ model Review {
   id           Int         @id @default(autoincrement())
   tmdbId       Int
   rating       Int
-  comment      Int
+  comment      String
   createdAt    DateTime    @default(now())
 
   userId       Int

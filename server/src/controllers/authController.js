@@ -28,6 +28,7 @@ const signup = async (req, res) => {
     res.status(201).json({ message: "User created successfully", token, userId: newUser.id });
 
   } catch (error) {
+    console.log("BODY:", req.body);
     res.status(500).json({ message: "Internal server error" });
   }
 };

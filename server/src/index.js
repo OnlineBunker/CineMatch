@@ -5,6 +5,7 @@ import authRoutes from "./routes/authRoutes.js";
 import reviewRoutes from "./routes/reviewRoutes.js";
 import watchlistRoutes from "./routes/watchlistRoutes.js";
 import movieRoutes from "./routes/movieRoutes.js";
+import tmdbRoutes from "./routes/tmdbRoutes.js";
 
 const app = express();
 dotenv.config();
@@ -16,6 +17,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/reviews", reviewRoutes);
 app.use("/api/watchlist", watchlistRoutes);
 app.use("/api/movies", movieRoutes);
+app.use("/api/tmdb", tmdbRoutes);
 
 const PORT = process.env.PORT || 3000;
 

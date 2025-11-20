@@ -1,0 +1,151 @@
+.movie-detail {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.overlay {
+  width: 100%;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  padding: 7% 5%;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.title-bar {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 16px 24px;
+  max-width: fit-content;
+  border-radius: 10px;
+}
+
+.title-bar h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.title-actions-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.spacer {
+  height: 25vh;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+.action-buttons button {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid white;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 160px;
+}
+
+.action-buttons button:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.action-buttons button.active {
+  background: #f12828;
+  color: white;
+  border: none;
+}
+
+.details-panel {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 24px;
+  border-radius: 12px;
+  line-height: 1.4;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.details-panel strong {
+  color: #f12828;
+}
+
+.review-box {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 45%;
+  max-width: none;
+  margin: 40px auto 0 auto;
+}
+
+.review-box textarea {
+  width: 100%;
+  height: 120px;
+  resize: vertical;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: none;
+  background: rgba(255,255,255,0.05);
+  color: white;
+}
+
+.review-box button {
+  align-self: center;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #f12828;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.review-box button:hover {
+  background: #c82020;
+}
+
+@media (max-width: 768px) {
+  .title-bar h1 {
+    font-size: 1.8rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .details-panel,
+  .review-box {
+    padding: 16px;
+  }
+}

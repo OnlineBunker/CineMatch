@@ -1,0 +1,90 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: transparent; 
+  color: #e1d7d7;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  z-index: 1000;         
+  position: fixed;    
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.01);
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;      
+  z-index: 1;             
+  pointer-events: none;    
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.95) 0%,
+    rgba(0,0,0,0.6) 30%,
+    rgba(0,0,0,0.2) 60%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+.navbar > * {
+  position: relative;
+  z-index: 2;
+}
+
+.navbar.scrolled::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.98) 0%,
+    rgba(0,0,0,0.8) 40%,
+    rgba(0,0,0,0.4) 70%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+
+.logo {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #f12828;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #f12828;     /* same red as your logo */
+}
+
+.logo a:visited {
+  color: #f12828;     /* prevents purple visited color */
+}
+
+.nav-links {
+  font-size: 1.2rem;
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  margin: 5px 5px;
+  padding: 5px 10px;
+}
+
+.nav-links li:hover {
+  color: #ee3030;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10%;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: inherit;
+}

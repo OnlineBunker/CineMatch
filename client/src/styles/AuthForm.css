@@ -51,3 +51,61 @@
   font-size: 0.9rem;
   text-align: center;
 }
+
+/* Fullscreen background like carousel-slide */
+.auth-bg {
+  position: fixed;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Subtle blur overlay */
+.auth-blur-overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(5px);
+  background: rgba(0,0,0,0.45);
+}
+
+/* Centered form */
+.glass-form {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  color: black;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+}
+
+/* Arrows bottom-right */
+.auth-arrows {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 20;
+  display: flex;
+  gap: 12px;
+}
+
+.auth-arrows button {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.auth-arrows button:hover {
+  background: rgba(255,255,255,0.25);
+}

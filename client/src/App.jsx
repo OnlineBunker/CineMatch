@@ -4,11 +4,11 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import Home from "./pages/Home.jsx";
-import Search from "./pages/Search.jsx";
+import Search from "./pages/search.jsx";
 import MovieDetails from './pages/MovieDetails.jsx';
 import Dashboard from "./pages/Dashboard.jsx";
 
-import MainLayout from "./assets/MainLayout.jsx";
+import MainLayout from "./assets/mainLayout.jsx";
 import AuthLayout from "./assets/AuthLayout.jsx";
 
 const App = () => {

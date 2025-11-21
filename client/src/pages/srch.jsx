@@ -26,7 +26,7 @@ function Search() {
     try {
       setLoading(true);
 
-      const res = await fetch(`/api/movies/search?query=${encodeURIComponent(q)}`);
+      const res = await fetch(`https://cinematch-8xa3.onrender.com/api/movies/search?query=${encodeURIComponent(q)}`);
       const data = await res.json();
 
       if (!res.ok) {

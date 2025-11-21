@@ -1,4 +1,4 @@
-const API_URL = '/api/auth';
+const API_URL = 'https://cinematch-8xa3.onrender.com/api/auth';
 
 export const loginUser = async (email, password) => {
   try {

@@ -21,7 +21,7 @@ const Login = () => {
   // Fetch trending backgrounds from your backend
   useEffect(() => {
     const load = async () => {
-      const data = await fetch("/api/tmdb/trending").then((r) => r.json());
+      const data = await fetch("https://cinematch-8xa3.onrender.com/api/tmdb/trending").then((r) => r.json());
       setTrendingImages(
         data.results
           .filter((m) => m.backdrop_path)

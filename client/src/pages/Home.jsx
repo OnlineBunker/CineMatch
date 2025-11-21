@@ -85,22 +85,22 @@ export default function Homepage() {
   // Backend-based fetching
   useEffect(() => {
     const fetchTrending = async () => {
-      const data = await fetch("/api/tmdb/trending").then((r) => r.json());
+      const data = await fetch("https://cinematch-8xa3.onrender.com/api/tmdb/trending").then((r) => r.json());
       setTrending(data.results.slice(0, 10));
     };
 
     const fetchTopRated = async () => {
-      const data = await fetch("/api/tmdb/top-rated").then((r) => r.json());
+      const data = await fetch("https://cinematch-8xa3.onrender.com/api/tmdb/top-rated").then((r) => r.json());
       setTopRated(data.results.slice(0, 12));
     };
 
     const fetchGenre = async (id, setter) => {
-      const data = await fetch(`/api/tmdb/genre/${id}`).then((r) => r.json());
+      const data = await fetch(`https://cinematch-8xa3.onrender.com/api/tmdb/genre/${id}`).then((r) => r.json());
       setter(data.results.slice(0, 12));
     };
 
     const fetchNewReleases = async () => {
-      const data = await fetch("/api/tmdb/new-releases").then((r) => r.json());
+      const data = await fetch("https://cinematch-8xa3.onrender.com/api/tmdb/new-releases").then((r) => r.json());
       setNewReleases(data.results.slice(0, 10));
     };
 

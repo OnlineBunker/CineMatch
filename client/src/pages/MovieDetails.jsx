@@ -17,14 +17,14 @@ const MoviePage = () => {
 
   useEffect(() => {
     const fetchDetails = async () => {
-      const res = await fetch(`/api/movies/${id}`);
+      const res = await fetch(`https://cinematch-8xa3.onrender.com/api/movies/${id}`);
       const data = await res.json();
       setMovie(data);
     };
 
     const fetchWatchlist = async () => {
       if (!user) return;
-      const res = await fetch("/api/watchlist", {
+      const res = await fetch("https://cinematch-8xa3.onrender.com/api/watchlist", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       const data = await res.json();
@@ -33,7 +33,7 @@ const MoviePage = () => {
 
     const fetchReview = async () => {
       if (!user) return;
-      const res = await fetch("/api/reviews/my-reviews", {
+      const res = await fetch("https://cinematch-8xa3.onrender.com/api/reviews/my-reviews", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       const data = await res.json();
@@ -53,7 +53,7 @@ const MoviePage = () => {
   const toggleWatchlist = async () => {
     if (!user) return alert("Please login to modify watchlist");
     const method = watchlistStatus ? "DELETE" : "POST";
-    const endpoint = `/api/watchlist/${id}`;
+    const endpoint = `https://cinematch-8xa3.onrender.com/api/watchlist/${id}`;
     await fetch(endpoint, {
       method,
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -67,7 +67,7 @@ const MoviePage = () => {
   };
 
   const submitReview = async () => {
-    const res = await fetch("/api/reviews", {
+    const res = await fetch("https://cinematch-8xa3.onrender.com/api/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const MoviePage = () => {
 
   const deleteReview = async () => {
     if (!submittedReview) return;
-    await fetch(`/api/reviews/${submittedReview.id}`, {
+    await fetch(`https://cinematch-8xa3.onrender.com/api/reviews/${submittedReview.id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });

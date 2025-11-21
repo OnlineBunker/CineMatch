@@ -13,7 +13,7 @@ const Dashboard = () => {
     if (!user) return;
 
     const fetchWatchlist = async () => {
-      const res = await fetch('/api/watchlist', {
+      const res = await fetch('https://cinematch-8xa3.onrender.com/api/watchlist', {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       const data = await res.json();
@@ -21,7 +21,7 @@ const Dashboard = () => {
     };
 
     const fetchReviews = async () => {
-      const res = await fetch('/api/reviews/my-reviews', {
+      const res = await fetch('https://cinematch-8xa3.onrender.com/api/reviews/my-reviews', {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       const data = await res.json();

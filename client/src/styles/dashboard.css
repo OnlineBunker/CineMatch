@@ -2,59 +2,63 @@
   display: flex;
   background-color: black;
   color: white;
-  min-height: 100vh;
-  padding: 5% 0%;
+  padding-top: 6rem; /* navbar offset */
+  padding-bottom: 2rem; /* small bottom space */
+  min-height: calc(100vh - 6rem); /* always fills full page */
   font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 .profile-sidebar {
   width: 25%;
   background-color: #111;
-  padding: 30px 20px;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 1rem;
+  min-height: 100%; /* sidebar stretches fully */
 }
 
 .profile-pic {
-  width: 100px;
-  height: 100px;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
   background: gray;
-  margin-bottom: 10px;
 }
 
 .dashboard-content {
-  width: 75%;
-  padding: 40px;
+  flex: 1;
+  padding: 2rem;
+  padding-bottom: 3rem; /* ensures footer isn't too close */
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 2.5rem;
+  box-sizing: border-box;
 }
 
 .section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .card-row {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 16px;
-  padding-bottom: 10px;
+  gap: 1rem;
+  padding-bottom: 1rem;
 }
 
 .movie-card {
-  min-width: 140px;
-  height: 210px;
+  min-width: 9rem;
+  height: 14rem;
   background-color: #222;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
 }
 
 .movie-card img {

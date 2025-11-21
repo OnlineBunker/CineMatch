@@ -167,10 +167,8 @@ export default function Homepage() {
         <HorizontalRow title="Top Rated of All Time" movies={topRated} rowRef={topRatedRef} />
         <HorizontalRow title="New Releases" movies={newReleases} rowRef={newReleasesRef} />
         <HorizontalRow title="Top 10 Horror Picks" movies={horror} rowRef={horrorRef} />
-        <HorizontalRow title="Top Animated Movies" movies={animated} rowRef={animatedRef} />
         <HorizontalRow title="Top 10 Action Picks" movies={action} rowRef={actionRef} />
         <HorizontalRow title="Top 10 Psychological Thriller Picks" movies={thriller} rowRef={thrillerRef} />
-        <HorizontalRow title="Top 10 Drama Picks" movies={drama} rowRef={dramaRef} />
       </div>
     </div>
   );

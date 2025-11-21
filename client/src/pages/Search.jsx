@@ -34,7 +34,7 @@ function Search() {
         return;
       }
 
-      const sorted = data.results?.sort((a, b) => b.vote_average - a.vote_average) || [];
+      const sorted = data.results.sort((a, b) => b.popularity - a.popularity) || [];
       setMovies(sorted);
 
     } catch (err) {

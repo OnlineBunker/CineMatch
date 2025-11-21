@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 
 import authRoutes from "./routes/authRoutes.js";
 import reviewRoutes from "./routes/reviewRoutes.js";
@@ -9,6 +10,13 @@ import tmdbRoutes from "./routes/tmdbRoutes.js";
 
 const app = express();
 dotenv.config();
+
+app.use(
+  cors({
+    origin: "https://cine-match-xi.vercel.app",
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

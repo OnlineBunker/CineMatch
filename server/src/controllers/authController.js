@@ -37,7 +37,7 @@ const signup = async (req, res) => {
       },
     });
   } catch (error) {
-    console.log("BODY:", req.body);
+    console.log("AUTH ERROR:", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };

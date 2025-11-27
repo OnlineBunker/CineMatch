@@ -5,16 +5,19 @@ const API_KEY = process.env.TMDB_API_KEY;
 const TMDB_BASE = "https://api.themoviedb.org/3/movie/";
 
 // Retry helper
+// fetching images of movies 5 times so that if failed once then it doesn't stop at one
 async function fetchWithRetry(url, tries = 5, delay = 200) {
   try {
     return await axios.get(url, { params: { api_key: API_KEY } });
   } catch (err) {
     if (tries <= 1) throw err;
     await new Promise((res) => setTimeout(res, delay));
+    // recursion to count the tries
     return fetchWithRetry(url, tries - 1, delay * 2);
   }
 }
 
+// normal adding a movieId in watchlist database
 const addToWatchlist = async (req, res) => {
   try {
     const tmdbId = Number(req.params.tmdbId);
@@ -37,8 +40,10 @@ const addToWatchlist = async (req, res) => {
   }
 };
 
+// same as fetching all the reviews in ../reviewController.js
 const getMyWatchlist = async (req, res) => {
   try {
+    // fetch all the movies in the watchlist database of one userId
     const items = await prisma.watchlist.findMany({
       where: { userId: req.user.id },
     });

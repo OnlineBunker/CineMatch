@@ -1,4 +1,5 @@
 import express from "express";
+// acios is the same as fetch but with easier readability as it has params function that can let us enter parameters in a url easily
 import axios from "axios";
 import dotenv from "dotenv";
 
@@ -9,7 +10,7 @@ const router = express.Router();
 const TMDB_BASE = "https://api.themoviedb.org/3";
 const KEY = process.env.TMDB_API_KEY;
 
-// Trending
+// Trending, fetching the trending movies from tmdb api
 router.get("/trending", async (req, res) => {
   try {
     const { data } = await axios.get(`${TMDB_BASE}/trending/movie/day`, {
@@ -21,7 +22,7 @@ router.get("/trending", async (req, res) => {
   }
 });
 
-// Top Rated
+// Top Rated, fetching the top-rated movies from tmdb api
 router.get("/top-rated", async (req, res) => {
   try {
     const { data } = await axios.get(`${TMDB_BASE}/movie/top_rated`, {
@@ -33,11 +34,12 @@ router.get("/top-rated", async (req, res) => {
   }
 });
 
-// New Releases
+// New Releases, fetching the new-releases movies from tmdb api
 router.get("/new-releases", async (req, res) => {
   try {
     const { data } = await axios.get(`${TMDB_BASE}/movie/now_playing`, {
-      params: { api_key: KEY, language: "en-US", page: 1 }
+      // params: { api_key: KEY, language: "en-US", page: 1 }
+      params: { api_key: KEY, language: "en-IND", page: 1 }
     });
     res.json(data);
   } catch {
@@ -45,11 +47,12 @@ router.get("/new-releases", async (req, res) => {
   }
 });
 
-// Genres
+// Genres, fetching the genres movies from tmdb api
 router.get("/genre/:genreId", async (req, res) => {
   try {
     const { genreId } = req.params;
 
+    // this url gives the suggestion sorted in descending order of vote_average/rating
     const url = `${TMDB_BASE}/discover/movie?api_key=${KEY}&with_genres=${genreId}&sort_by=vote_average.desc&vote_count.gte=500`;
 
     const { data } = await axios.get(url);

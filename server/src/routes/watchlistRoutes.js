@@ -1,4 +1,5 @@
 import express from "express";
+// middleware is required to check wether the user is logged in and then it will be able to add reviews to the users database
 import authMiddleware from "../middleware/authMiddleware.js";
 import {
   addToWatchlist,

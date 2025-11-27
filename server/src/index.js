@@ -15,7 +15,11 @@ dotenv.config();
 // have to understand
 app.use(
   cors({
-    origin: "https://cine-match-xi.vercel.app",
+    origin: [
+      "http://localhost:5173",
+      "https://cine-match-git-main-yashs-projects-48a1602f.vercel.app",
+      "https://cine-match.vercel.app"
+    ],
     credentials: true,
   })
 );

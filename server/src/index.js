@@ -18,7 +18,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://cine-match-git-main-yashs-projects-48a1602f.vercel.app",
-      "https://cine-match.vercel.app"
+      "https://cine-match-xi.vercel.app"
     ],
     credentials: true,
   })
